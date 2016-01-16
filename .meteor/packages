@@ -38,6 +38,9 @@ alanning:roles
 random
 email
 momentjs:moment
-autopublish
 insecure
 aldeed:autoform
+meteorhacks:subs-manager
+sacha:spin
+d3js:d3
+chart:chart

@@ -1,0 +1,13 @@
+<template name="viewPolls">
+  <div class="container">
+    {{#each polls}}
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        <h2>{{title}}</h2>
+        <h3>{{subtitle}}</h3>
+        {{>barChart}}
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</template>

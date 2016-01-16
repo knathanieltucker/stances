@@ -1,0 +1,1 @@
+PollSubs = new SubsManager();

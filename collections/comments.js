@@ -1,17 +1,16 @@
 Comments = new Meteor.Collection( 'comments' );
 
-// we temp allow editing Comments
-// Comments.allow({
-//   insert: () => false,
-//   update: () => false,
-//   remove: () => false
-// });
+Comments.allow({
+  insert: () => false,
+  update: () => false,
+  remove: () => false
+});
 
-// Comments.deny({
-//   insert: () => true,
-//   update: () => true,
-//   remove: () => true
-// });
+Comments.deny({
+  insert: () => true,
+  update: () => true,
+  remove: () => true
+});
 
 let CommentsSchema = new SimpleSchema({
   "creator.id": {
@@ -27,6 +26,10 @@ let CommentsSchema = new SimpleSchema({
   "comment": {
     type: String,
     label: "The comment made by the user."
+  },
+  "commentedOn": {
+    type: String,
+    label: "The id of the thing we commented on"
   },
   "upvotes.count": {
     type: Number,
