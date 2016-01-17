@@ -1,17 +1,18 @@
 Template.votePoll.onCreated(function() {
-    var self = this;
-    self.autorun(function() {
-        var pollId = FlowRouter.getParam('pollId');
 
-        PollSubs.subscribe('singlePollStances', pollId);
-        PollSubs.subscribe('singlePoll', pollId);
-    });
+  Template.instance().subscribe( 'singlePoll',
+    FlowRouter.getParam('pollId') );
+  Template.instance().subscribe( 'singlePollStances',
+    FlowRouter.getParam('pollId') );
+
 });
 
 
 Template.votePoll.helpers({
   votePollOptions: function () {
-    var stances = Stances.find().fetch();
+    var stances = Stances.find({
+      pollId: FlowRouter.getParam('pollId')
+    }).fetch();
     return _.map(stances, function (s) {
       return {label: s.stance, value: s._id};
     });

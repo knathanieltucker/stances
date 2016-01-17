@@ -1,12 +1,8 @@
 Template.insertStance.onCreated(function() {
-    var self = this;
-    self.ready = new ReactiveVar();
-    self.autorun(function() {
-        var pollId = FlowRouter.getParam('pollId');
-        // potentially just get answers
-        var handle = PollSubs.subscribe('singlePoll', pollId);
-        self.ready.set(handle.ready());
-    });
+
+  Template.instance().subscribe( 'singlePoll',
+    FlowRouter.getParam('pollId') );
+
 });
 
 Template.insertStance.events({

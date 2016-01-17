@@ -6,7 +6,9 @@ let startup = () => {
 
 var _setEnvironmentVariables = () => Modules.server.setEnvironmentVariables();
 
-var _setBrowserPolicies = () => {};
+var _setBrowserPolicies = () => {
+  BrowserPolicy.content.allowEval();
+};
 
 var _generateAccounts = () => Modules.server.generateAccounts();
 
