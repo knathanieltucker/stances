@@ -24,7 +24,7 @@ Template.viewPoll.onRendered(function () {
   }, {});
 
 
-  Stances.find({
+  Template.instance().pollHandle = Stances.find({
     pollId: FlowRouter.getParam('pollId')
   }).observeChanges({
     added: function (id, stance) {
@@ -45,9 +45,10 @@ Template.viewPoll.onRendered(function () {
     }
   });
 
+});
 
-  window.bar = pollBarChart;
-
+Template.viewPoll.onDestroyed(function () {
+  Template.instance().pollHandle.stop();
 });
 
 Template.viewPoll.helpers({

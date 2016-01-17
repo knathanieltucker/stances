@@ -4,5 +4,5 @@ Meteor.publish( 'singlePoll', function(pollId) {
 });
 
 Meteor.publish( 'Polls', function() {
-  return Polls.find( {}, {limit: 1} );
+  return Polls.find( {}, {limit: 5} );
 });
