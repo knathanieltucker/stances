@@ -16,6 +16,9 @@ Template.votePoll.helpers({
     return _.map(stances, function (s) {
       return {label: s.stance, value: s._id};
     });
+  },
+  pollId: function () {
+    return FlowRouter.getParam('pollId');
   }
 });
 

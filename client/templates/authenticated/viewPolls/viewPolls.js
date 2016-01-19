@@ -7,5 +7,8 @@ Template.viewPolls.onCreated(function() {
 Template.viewPolls.helpers({
   polls: function () {
     return Polls.find();
+  },
+  userVoted: function (pollId) {
+    return Meteor.user().votes.polls.indexOf(pollId) !== -1;
   }
 });

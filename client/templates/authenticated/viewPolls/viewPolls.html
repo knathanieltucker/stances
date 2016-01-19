@@ -3,9 +3,17 @@
     {{#each polls}}
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
-        <h2>{{title}}</h2>
-        <h3>{{subtitle}}</h3>
+        <h2><a href="{{pathFor 'viewPoll' pollId=this._id}}">{{title}}</a></h2>
+        <h3>{{subtitle}}
+        {{#unless userVoted this._id}}
+          <span><a href="{{pathFor 'votePoll' pollId=this._id}}">(vote?)</a></span>
+        {{/unless}}
+        </h3>
         {{>barChart}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
       </div>
     </div>
     {{/each}}

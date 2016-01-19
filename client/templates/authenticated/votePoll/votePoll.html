@@ -1,7 +1,7 @@
 <template name="votePoll">
   {{#autoForm schema="VotesSchema" id="votePoll" validation="none" type="method" meteormethod="votePoll"}}
   <fieldset>
-    <legend>Choose a Stance</legend>
+    <legend>Choose a Stance (<a href="{{pathFor 'insertStance' pollId= pollId }}">Add a stance</a>)</legend>
     {{> afQuickField name="stanceId" options=votePollOptions}}
   </fieldset>
   <button type="submit" class="btn btn-primary">Vote</button>
