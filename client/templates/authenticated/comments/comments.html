@@ -1,0 +1,18 @@
+<template name="comments">
+  <ul class="list-group">
+  {{#each comments}}
+    {{>comment}}
+  {{/each}}
+  </ul>
+  {{#autoForm collection="Comments" id=this._id type="method" meteormethod="insertComment"}}
+  <fieldset>
+    {{> afQuickField name="comment" type="text"}}
+    {{> afQuickField name="commentedOn" type="hidden" defaultValue=this._id}}
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Vote</button>
+  {{/autoForm}}
+</template>
+
+<template name="comment">
+  <li class="list-group-item"> {{comment}} </li>
+</template>
