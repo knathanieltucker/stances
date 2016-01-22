@@ -25,6 +25,6 @@ Template.default.helpers({
 		return handleRedirect([
 			'index',
 			'dashboard'
-		], '/login' );
+		], 'index' );
 	}
 });
