@@ -13,6 +13,8 @@ Template.header.events({
         Bert.alert( error.reason, 'warning' );
       } else {
         Bert.alert( 'Logged out!', 'success' );
+        // we should only redirect if in auth route
+        FlowRouter.go('index');
       }
     });
   }

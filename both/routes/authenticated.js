@@ -1,5 +1,14 @@
 const authenticatedRoutes = FlowRouter.group({
-  name: 'authenticated'
+  name: 'authenticated',
+  triggersEnter: [ () => {
+    if (!Meteor.loggingIn() && !Meteor.userId()) {
+      route = FlowRouter.current();
+      if (route.route.name !== 'login') {
+        Session.set('redirectAfterLogin', route.path);
+      }
+      FlowRouter.go('login');
+    }
+  }]
 });
 
 authenticatedRoutes.route( '/insertPoll', {

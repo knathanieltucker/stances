@@ -10,7 +10,6 @@ Template.viewPoll.onRendered(function () {
 });
 
 Template.viewPoll.onDestroyed(function () {
-  Template.instance().pollHandle.stop();
 });
 
 Template.viewPoll.helpers({

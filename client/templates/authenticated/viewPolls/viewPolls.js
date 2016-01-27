@@ -9,6 +9,6 @@ Template.viewPolls.helpers({
     return Polls.find();
   },
   userVoted: function (pollId) {
-    return Meteor.user().votes.polls.indexOf(pollId) !== -1;
+    return Meteor.user() && Meteor.user().votes.polls.indexOf(pollId) !== -1;
   }
 });
