@@ -16,19 +16,6 @@ authenticatedRoutes.route( '/insertStance/:pollId', {
   }
 });
 
-authenticatedRoutes.route( '/viewPoll/:pollId', {
-  name: 'viewPoll',
-  action() {
-    BlazeLayout.render( 'default', { yield: 'viewPoll' } );
-  }
-});
-
-authenticatedRoutes.route( '/viewPolls', {
-  name: 'viewPolls',
-  action() {
-    BlazeLayout.render( 'default', { yield: 'viewPolls' } );
-  }
-});
 
 authenticatedRoutes.route( '/votePoll/:pollId', {
   name: 'votePoll',
@@ -37,9 +24,3 @@ authenticatedRoutes.route( '/votePoll/:pollId', {
   }
 });
 
-authenticatedRoutes.route( '/dashboard', {
-  name: 'dashboard',
-  action() {
-    BlazeLayout.render( 'default', { yield: 'dashboard' } );
-  }
-});

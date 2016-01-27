@@ -2,13 +2,6 @@ const publicRoutes = FlowRouter.group({
   name: 'public'
 });
 
-publicRoutes.route( '/', {
-  name: 'index',
-  action() {
-    BlazeLayout.render( 'default', { yield: 'index' } );
-  }
-});
-
 // publicRoutes.route( '/signup', {
 //   name: 'signup',
 //   action() {
@@ -16,12 +9,12 @@ publicRoutes.route( '/', {
 //   }
 // });
 
-// publicRoutes.route( '/login', {
-//   name: 'login',
-//   action() {
-//     BlazeLayout.render( 'default', { yield: 'login' } );
-//   }
-// });
+publicRoutes.route( '/login', {
+  name: 'login',
+  action() {
+    BlazeLayout.render( 'default', { yield: 'login' } );
+  }
+});
 
 // publicRoutes.route( '/recover-password', {
 //   name: 'recover-password',

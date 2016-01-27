@@ -2,21 +2,25 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <h4 class="page-header">Login</h4>
-      <form id="login" class="login">
-        <div class="form-group">
-          <label for="emailAddress">Email Address</label>
-          <input type="email" name="emailAddress" class="form-control" placeholder="Email Address">
+      <a class="btn btn-block btn-social btn-lg btn-facebook">
+          <span class="fa fa-facebook"></span> Sign in with facebook
+      </a>
+      <form id="sign-in-with-email">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="emailAddress">Email Address</label>
+            <input type="email" name="emailAddress" class="form-control" placeholder="What's your email, friend?">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" placeholder="How about a password, pal?">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="password"><span class="pull-left">Password</span></label>
-          <input type="password" name="password" class="form-control" placeholder="Password">
-          <a class="pull-right" href="{{pathFor 'recover-password'}}">Forgot Password?</a>
-        </div>
-        <div class="form-group">
-          <input type="submit" class="btn btn-success" value="Login">
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary btn-create-account">Create Account</button>
+          <button type="submit" class="btn btn-default btn-sign-in">Sign In</button>
         </div>
       </form>
-      <p>Don't have an account? <a href="{{pathFor 'signup'}}">Sign Up</a>.</p>
     </div>
   </div>
 </template>
